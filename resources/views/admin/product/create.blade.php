@@ -1,3 +1,5 @@
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -71,10 +73,17 @@
                                                         </div>
                                                         @enderror
                                                     </div>
+                                                    
+
+                                                    <div class="mb-3">
+                                                        <label for="formFile" class="form-label">img</label>
+                                                        <input class="form-control" id="image" name="img_itens" type="file" id="formFile">
+                                                    </div>
 
                                                     <!-- <div class="mb-3">
                                                         <label for="formFile" class="form-label">img</label>
-                                                        <input class="form-control" id="image" name="imagem" type="file" id="formFile">
+                                                        <img id="showImage" class="bd-placeholder-img card-img-top" src="{{(!empty($products->img_itens)) ? url('upload/admin_images/' .$products->img_itens) : url('upload/1361728.png') }}" width="100%" height="200" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false" />
+
                                                     </div> -->
 
                                                     <button class="w-100 btn btn-primary btn-lg" type="submit">Criar</button>
@@ -90,4 +99,17 @@
             </div>
         </div>
     </div>
+
+    <!-- <script type="text/javascript">
+        $(document).ready(function(){
+            $('#image').change(function(e){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $('#showImage').attr('src' ,e.target.result);
+
+                }
+                reader.readAdDataURL(e.target.files['0']);
+            });
+        });
+    </script> -->
 </x-app-layout>

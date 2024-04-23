@@ -17,6 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 
 Route::middleware('auth', 'admin')->group(function () {
@@ -29,6 +30,8 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::get('admin/products/edit/{id}', [ProductController::class,'edit'])->name('admin/products/edit');
     Route::put('admin/products/edit/{id}', [ProductController::class,'update'])->name('admin/products/update');
     Route::get('admin/products/delete/{id}', [ProductController::class,'delete'])->name('admin/products/delete');
+    
+
 
 
 
