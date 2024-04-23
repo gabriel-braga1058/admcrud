@@ -66,16 +66,16 @@
                                                         <label for="exampleFormControlTextarea1" class="form-label">Texto do Conteúdo:</label>
                                                         <textarea type="text" name="conteudo" class="form-control" id="exampleFormControlTextarea1" placeholder="Texto do Conteúdo"></textarea>
                                                         @error('conteudo')
-                                                        <div class="alert-danger" >
+                                                        <div class="alert-danger">
                                                             {{ $message }}
                                                         </div>
                                                         @enderror
                                                     </div>
 
                                                     <!-- <div class="mb-3">
-                                            <label for="formFile" class="form-label">img</label>
-                                            <input class="form-control" id="image" name="imagem" type="file" id="formFile">
-                                        </div> -->
+                                                        <label for="formFile" class="form-label">img</label>
+                                                        <input class="form-control" id="image" name="imagem" type="file" id="formFile">
+                                                    </div> -->
 
                                                     <button class="w-100 btn btn-primary btn-lg" type="submit">Criar</button>
                                             </div>

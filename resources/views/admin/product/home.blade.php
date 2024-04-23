@@ -35,7 +35,7 @@
         <div class="row">
             @foreach ($products as $product)
             <div class="col-sm-3 col-lg-4 mb-4">
-                <div class="card">
+                <div  class="card">
 
                     <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <title>Placeholder</title>
@@ -45,9 +45,11 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $product->nome}}</h5>
                         <p class="card-text">{{$product->sinopse}}</p>
+                        <p style="visibility: hidden; overflow: auto;  max-height: 20px;" class="card-text">{{$product->conteudo}}</p>
+
                         <div class="btn-group" role="group" aria-label="Basic exemple">
                             <a href="{{route('admin/products/edit', ['id'=>$product->id])}}" type="button" class="btn btn-secondary">edit</a>
-                            <a href="" type="button" class="btn btn-danger">deleta</a>
+                            <a href="{{route('admin/products/delete', ['id'=>$product->id])}}" type="button" class="btn btn-danger">deleta</a>
 
 
                         </div>

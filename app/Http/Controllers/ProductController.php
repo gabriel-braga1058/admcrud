@@ -41,5 +41,29 @@ class ProductController extends Controller
 
     }
 
+    public function delete($id)
+    {
+        $products = Product::findOrFail($id)->delete();
+        return redirect(route('admin/products'))->with('success', 'Conteúdo apagado com sucesso');
+
+    }
+
+    public function update(Request $request, $id)
+
+    {
+        $products = Product::findOrFail($id);
+
+        $nome = $request->nome;
+        $sinopse = $request->sinopse;
+        $conteudo = $request->conteudo;
+
+        $products->nome = $nome;
+        $products->sinopse = $sinopse;
+        $products->conteudo = $conteudo;
+        $data = $products->save();
+
+        return redirect(route('admin/products'))->with('success', 'Conteúdo editado com sucesso');
+    }
+
 
 }
