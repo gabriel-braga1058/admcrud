@@ -62,7 +62,7 @@
 
                                                         <div>
                                                             <label for="firstName" class="form-label">Sinopse do Conteúdo:</label>
-                                                            <input type="text" name="sinopse" class="form-control" id="firstName" placeholder="Sinopse do Conteúdo"  value="{{$products->nome}}">
+                                                            <input type="text" name="sinopse" class="form-control" id="firstName" placeholder="Sinopse do Conteúdo" value="{{$products->nome}}">
                                                             @error('sinopse')
                                                             <div class="alert-danger">
                                                                 {{ $message }}
@@ -76,16 +76,16 @@
                                                         <label for="exampleFormControlTextarea1" class="form-label">Texto do Conteúdo:</label>
                                                         <input type="text" name="conteudo" class="form-control" id="exampleFormControlTextarea1" placeholder="Texto do Conteúdo" value="{{$products->conteudo}}"></input>
                                                         @error('conteudo')
-                                                        <div class="alert-danger" >
+                                                        <div class="alert-danger">
                                                             {{ $message }}
                                                         </div>
                                                         @enderror
                                                     </div>
 
-                                                    <!-- <div class="mb-3">
-                                            <label for="formFile" class="form-label">img</label>
-                                            <input class="form-control" id="image" name="imagem" type="file" id="formFile">
-                                        </div> -->
+                                                    <div class="mb-3">
+                                                        <label for="formFile" class="form-label">img</label>
+                                                        <input class="form-control" id="image" name="imagem" type="file" id="formFile">
+                                                    </div>
 
                                                     <button class="w-100 btn btn-primary btn-lg" type="submit">Editar</button>
                                             </div>

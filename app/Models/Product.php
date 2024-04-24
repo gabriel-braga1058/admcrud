@@ -14,6 +14,8 @@ class Product extends Model
         'nome',
         'sinopse',
         'conteudo',
+        'img_itens',
+
         
     ];
 }

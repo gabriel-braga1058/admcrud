@@ -26,6 +26,15 @@ class ProductController extends Controller
         return view('admin.product.create');
     }
 
+    public function show(Product $Product)
+
+    {
+       
+        
+
+        return view('admin.product.show', ['Product' => $Product]);
+    }
+
     public function save(Request $request)
     {
         $product = new Product($request->all());
@@ -74,6 +83,8 @@ class ProductController extends Controller
         $products->conteudo = $conteudo;
         $products->img_itens = $img_itens;
         $data = $products->save();
+
+        
 
         return redirect(route('admin/products'))->with('success', 'Conteúdo editado com sucesso');
     }

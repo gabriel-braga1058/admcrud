@@ -25,20 +25,14 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::get('admin/dashboard', [HomeController::class,'index']);
 
     Route::get('/admin/products', [ProductController::class,'index'])->name('admin/products');
-    Route::get('admin/products/create', [ProductController::class,'create'])->name('admin/products/create');
-    Route::post('admin/products/save', [ProductController::class,'save'])->name('admin/products/save');
-    Route::get('admin/products/edit/{id}', [ProductController::class,'edit'])->name('admin/products/edit');
-    Route::put('admin/products/edit/{id}', [ProductController::class,'update'])->name('admin/products/update');
-    Route::get('admin/products/delete/{id}', [ProductController::class,'delete'])->name('admin/products/delete');
+    Route::get('/admin/products/create', [ProductController::class,'create'])->name('admin/products/create');
+    Route::get('/admin/products/show/{Product}', [ProductController::class,'show'])->name('admin/products/show');
+
+    Route::post('/admin/products/save', [ProductController::class,'save'])->name('admin/products/save');
+    Route::get('/admin/products/edit/{id}', [ProductController::class,'edit'])->name('admin/products/edit');
+    Route::put('/admin/products/edit/{id}', [ProductController::class,'update'])->name('admin/products/update');
+    Route::get('/admin/products/delete/{id}', [ProductController::class,'delete'])->name('admin/products/delete');
     
-
-
-
-
-
-
-
-
 
    
 });
