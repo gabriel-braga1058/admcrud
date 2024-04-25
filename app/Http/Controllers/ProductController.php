@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     //
+
+   
+
     public function index()
 
     {
@@ -30,9 +33,8 @@ class ProductController extends Controller
 
     {
        
-        
 
-        return view('admin.product.show', ['Product' => $Product]);
+        return view('admin.product.show',  ['Product' => $Product]);
     }
 
     public function save(Request $request)
@@ -71,6 +73,7 @@ class ProductController extends Controller
     public function update(Request $request, $id)
 
     {
+        
         $products = Product::findOrFail($id);
 
         $nome = $request->nome;
@@ -83,6 +86,8 @@ class ProductController extends Controller
         $products->conteudo = $conteudo;
         $products->img_itens = $img_itens;
         $data = $products->save();
+
+        
 
         
 

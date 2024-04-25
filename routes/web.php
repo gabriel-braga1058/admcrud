@@ -9,6 +9,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+route::get('/', [HomeController::class,'inicio'])->name('conta.inicio');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -22,7 +25,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth', 'admin')->group(function () {
 
-    Route::get('admin/dashboard', [HomeController::class,'index']);
+    Route::get('admin/dashboard', [HomeController::class,'index'])->name('admin/dashboard');
 
     Route::get('/admin/products', [ProductController::class,'index'])->name('admin/products');
     Route::get('/admin/products/create', [ProductController::class,'create'])->name('admin/products/create');
