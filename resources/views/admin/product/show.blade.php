@@ -12,7 +12,7 @@
                             <div class="card-meta">
                                 <a href="#"><time class="timeago" datetime="2021-09-26 20:00" timeago-id="2">{{$Product->created_at}}</time>
                             </div>
-                            <a >
+                            <a>
                                 <h1 class="card-title">{{$Product->nome}}</h1>
                             </a>
                         </header>
@@ -30,13 +30,21 @@
 
                             <hr>
 
-                           
 
-                            
-                            
+
+
+
 
                         </div>
                     </article><!-- /.card -->
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('chirps.store') }}">
+                            @csrf
+                            <textarea name="message" placeholder="{{ __('Faça um Comentario!!') }}" class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">{{ old('message') }}</textarea>
+                            <x-input-error :messages="$errors->get('message')" class="mt-2" />
+                            <x-primary-button class="mt-4">{{ __('Comentar') }}</x-primary-button>
+                        </form>
+                    </div>
 
                 </div>
                 <div class="col-md-3 ms-auto">
@@ -80,6 +88,7 @@
                             </div>
                         </div>
                     </aside> -->
+
 
                 </div>
             </div>
